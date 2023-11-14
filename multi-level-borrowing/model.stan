@@ -3,14 +3,14 @@
 
 
 data {
-    int<lower=1> n_groups;
-    int<lower=1> n;
-    array[n] real x;
-    array[n] int<lower=1, upper=n_groups> group_index;
-    real muprime_mu;
-    real<lower=0> muprime_sigma;
-    real tau_mu;
-    real<lower=0> tau_sigma;
+    int<lower=1> n_groups;     // Number of groups
+    int<lower=1> n;            // Total number of observations
+    array[n] real x;           // Observations
+    array[n] int<lower=1, upper=n_groups> group_index;   // observations -> group mapping
+    real muprime_mu;                    // prior mean      for group mean
+    real<lower=0> muprime_sigma;        // prior variance  for group mean
+    real tau_mu;                        // prior mean      for group variance
+    real<lower=0> tau_sigma;            // prior variance  for group variance
 }
 
 parameters {
